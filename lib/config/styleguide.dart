@@ -29,7 +29,7 @@ class AppTheme{
     subtitle1: _subtitleLight,
     button: _buttonLight,
     headline1: headlineLight,
-    bodyText1: _bodyLight,
+    bodyText1: bodyLight,
   );
 
   static final TextTheme darkTextTheme = TextTheme(
@@ -47,10 +47,16 @@ class AppTheme{
     height: 1.5,
   );
 
-  static final TextStyle _bodyLight = GoogleFonts.montserrat(
+  static final TextStyle bodyLight = GoogleFonts.montserrat(
     fontSize: 1.8 * SizeConfig.textMultiplier,
     color: Colors.black54,
-    height: 1.5,
+    height: 1.2,
+  );
+
+  static final TextStyle bodyLightBold = GoogleFonts.roboto(
+    fontSize: 1.65 * SizeConfig.textMultiplier,
+    color: Colors.black87,
+    fontWeight: FontWeight.w600,
   );
 
   static final TextStyle titleLight = GoogleFonts.montserrat(
@@ -77,7 +83,7 @@ class AppTheme{
 
   static final TextStyle _headlineDark = headlineLight.copyWith(color: Colors.black);
 
-  static final TextStyle _bodyDark = _bodyLight.copyWith(color: Colors.white);
+  static final TextStyle _bodyDark = bodyLight.copyWith(color: Colors.white);
 
   static final TextStyle _titleDark = titleLight.copyWith(color: Colors.white);
 

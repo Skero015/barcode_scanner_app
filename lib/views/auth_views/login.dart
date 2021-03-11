@@ -42,66 +42,122 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 30.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 70,
-              ),
-              Text('Login,', style: AppTheme.titleLight,),
-              Text('to your account', style: AppTheme.titleLightWeight,),
-              SizedBox(
-                height: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 30.0),
-                child: TextFormField(
-                  controller: _email,
-                  decoration: InputDecoration(
-                    hintText: 'Email address',
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 35,),
-              Padding(
-                padding: const EdgeInsets.only(right: 30.0),
-                child: TextFormField(
-                  controller: _password,
-                  decoration: InputDecoration(
-                      hintText: 'Password',
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 2.5 * SizeConfig.heightMultiplier,),
-              Row(
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                    child: Image(
-                      image: AssetImage(Images.facebookImage),
-                      fit: BoxFit.cover,
-                      height: 6.5 * SizeConfig.imageSizeMultiplier,
+                  SizedBox(
+                    height: 70,
+                  ),
+                  Text('Login,', style: AppTheme.titleLight,),
+                  Text('to your account', style: AppTheme.titleLightWeight,),
+                  SizedBox(
+                    height: 60,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30.0),
+                    child: TextFormField(
+                      controller: _email,
+                      decoration: InputDecoration(
+                        hintText: 'Email address',
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                        ),
+                      ),
                     ),
                   ),
-                  SizedBox(width: 3 * SizeConfig.widthMultiplier,),
-                  GestureDetector(
-                    child: Image(
-                      image: AssetImage(Images.googleImage),
-                      fit: BoxFit.cover,
-                      height: 6.5 * SizeConfig.imageSizeMultiplier,
+                  SizedBox(height: 35,),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30.0),
+                    child: TextFormField(
+                      controller: _password,
+                      decoration: InputDecoration(
+                          hintText: 'Password',
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                        ),
+                      ),
                     ),
+                  ),
+                  SizedBox(height: 2.5 * SizeConfig.heightMultiplier,),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        child: Image(
+                          image: AssetImage(Images.facebookImage),
+                          fit: BoxFit.cover,
+                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                        ),
+                      ),
+                      SizedBox(width: 3 * SizeConfig.widthMultiplier,),
+                      GestureDetector(
+                        child: Image(
+                          image: AssetImage(Images.googleImage),
+                          fit: BoxFit.cover,
+                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                        ),
+                      )
+                    ],
                   )
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(left: 30),
+                        color: Colors.white,
+                        height: 2.8 * SizeConfig.heightMultiplier,
+                        child: GestureDetector(
+                            child: Text('Forgot Password?', style: AppTheme.bodyLightBold, textAlign: TextAlign.start,),
+                          onTap: () {
+
+                          },
+                        ),
+                      ),
+                      Container(
+                        color: Color(0xFF696969),
+                        height: 5 * SizeConfig.heightMultiplier,
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    right: 5 * SizeConfig.widthMultiplier,
+                    child: GestureDetector(
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 5.5 * SizeConfig.heightMultiplier,
+                        width: 16 * SizeConfig.widthMultiplier,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFfEEEDE7),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                        ),
+                        child: Image(
+                          image: AssetImage(Images.nextImage),
+                          fit: BoxFit.cover,
+                          height: 13 * SizeConfig.imageSizeMultiplier,
+                        ),
+                      ),
+                      onTap: () {
+
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
