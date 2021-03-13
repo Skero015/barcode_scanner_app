@@ -1,6 +1,7 @@
 import 'package:barcode_scanner_app/config/images.dart';
 import 'package:barcode_scanner_app/config/size_config.dart';
 import 'package:barcode_scanner_app/config/styleguide.dart';
+import 'package:barcode_scanner_app/views/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -95,14 +96,17 @@ class _RegisterScreenState extends State<RegisterScreen> with SingleTickerProvid
                       ),
                     ),
                   ),
-                  SizedBox(height: 2.5 * SizeConfig.heightMultiplier,),
+                  SizedBox(height: 1.7 * SizeConfig.heightMultiplier,),
                   Row(
                     children: [
                       GestureDetector(
-                        child: Image(
-                          image: AssetImage(Images.facebookImage),
-                          fit: BoxFit.cover,
-                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Image(
+                            image: AssetImage(Images.facebookImage),
+                            fit: BoxFit.fill,
+                            height: 8.1 * SizeConfig.imageSizeMultiplier,
+                          ),
                         ),
                       ),
                       SizedBox(width: 3 * SizeConfig.widthMultiplier,),
@@ -110,7 +114,7 @@ class _RegisterScreenState extends State<RegisterScreen> with SingleTickerProvid
                         child: Image(
                           image: AssetImage(Images.googleImage),
                           fit: BoxFit.cover,
-                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                          height: 9.5 * SizeConfig.imageSizeMultiplier,
                         ),
                       )
                     ],
@@ -131,15 +135,9 @@ class _RegisterScreenState extends State<RegisterScreen> with SingleTickerProvid
                         padding: EdgeInsets.only(left: 30),
                         color: Colors.white,
                         height: 2.8 * SizeConfig.heightMultiplier,
-                        child: GestureDetector(
-                          child: Text('Forgot Password?', style: AppTheme.bodyLightBold, textAlign: TextAlign.start,),
-                          onTap: () {
-
-                          },
-                        ),
                       ),
                       Container(
-                        color: Color(0xFF696969),
+                        color: Color(0xFF8F7A7A),
                         height: 5 * SizeConfig.heightMultiplier,
                       ),
                     ],
@@ -163,7 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> with SingleTickerProvid
                         ),
                       ),
                       onTap: () {
-
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
                       },
                     ),
                   ),

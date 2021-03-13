@@ -7,4 +7,5 @@ class Images {
   static const String profileImage = "images/monica.png";
   static const String googleImage = "images/googleplus.png";
   static const String nextImage = "images/nexticon.png";
+  static const String eventImage = "images/event2.png";
 }

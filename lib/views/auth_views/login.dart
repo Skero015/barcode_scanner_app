@@ -1,6 +1,7 @@
 import 'package:barcode_scanner_app/config/images.dart';
 import 'package:barcode_scanner_app/config/size_config.dart';
 import 'package:barcode_scanner_app/config/styleguide.dart';
+import 'package:barcode_scanner_app/views/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -82,14 +83,17 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       ),
                     ),
                   ),
-                  SizedBox(height: 2.5 * SizeConfig.heightMultiplier,),
+                  SizedBox(height: 1.7 * SizeConfig.heightMultiplier,),
                   Row(
                     children: [
                       GestureDetector(
-                        child: Image(
-                          image: AssetImage(Images.facebookImage),
-                          fit: BoxFit.cover,
-                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Image(
+                            image: AssetImage(Images.facebookImage),
+                            fit: BoxFit.fill,
+                            height: 8.1 * SizeConfig.imageSizeMultiplier,
+                          ),
                         ),
                       ),
                       SizedBox(width: 3 * SizeConfig.widthMultiplier,),
@@ -97,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         child: Image(
                           image: AssetImage(Images.googleImage),
                           fit: BoxFit.cover,
-                          height: 6.5 * SizeConfig.imageSizeMultiplier,
+                          height: 9.5 * SizeConfig.imageSizeMultiplier,
                         ),
                       )
                     ],
@@ -126,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         ),
                       ),
                       Container(
-                        color: Color(0xFF696969),
+                        color: Color(0xFF8F7A7A),
                         height: 5 * SizeConfig.heightMultiplier,
                       ),
                     ],
@@ -150,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         ),
                       ),
                       onTap: () {
-
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
                       },
                     ),
                   ),

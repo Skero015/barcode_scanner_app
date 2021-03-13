@@ -26,18 +26,18 @@ class AppTheme{
 
   static final TextTheme lightTextTheme = TextTheme(
     title: titleLight,
-    subtitle1: _subtitleLight,
-    button: _buttonLight,
+    subtitle1: subtitleLight,
+    button: buttonLight,
     headline1: headlineLight,
     bodyText1: bodyLight,
   );
 
   static final TextTheme darkTextTheme = TextTheme(
     title: _titleDark,
-    subtitle1: _subTitleDark,
+    subtitle1: subTitleDark,
     button: _buttonDark,
     headline1: _headlineDark,
-    bodyText1: _bodyDark,
+    bodyText1: bodyDark,
   );
 
   static final TextStyle headlineLight = GoogleFonts.roboto(
@@ -47,7 +47,7 @@ class AppTheme{
     height: 1.5,
   );
 
-  static final TextStyle bodyLight = GoogleFonts.montserrat(
+  static final TextStyle bodyLight = GoogleFonts.roboto(
     fontSize: 1.8 * SizeConfig.textMultiplier,
     color: Colors.black54,
     height: 1.2,
@@ -70,24 +70,28 @@ class AppTheme{
     fontWeight: FontWeight.normal,
   );
 
-  static final TextStyle _subtitleLight = GoogleFonts.montserrat(
+  static final TextStyle subtitleLight = GoogleFonts.montserrat(
     fontSize: 2 * SizeConfig.textMultiplier,
     color: subTitleTextColor,
     fontWeight: FontWeight.w700,
   );
+  static final TextStyle subtitleLightWeight = GoogleFonts.montserrat(
+    fontSize: 2.1 * SizeConfig.textMultiplier,
+    color: Colors.black54,
+  );
 
-  static final TextStyle _buttonLight = GoogleFonts.montserrat(
+  static final TextStyle buttonLight = GoogleFonts.montserrat(
     color: Colors.black,
     fontSize: 2.5 * SizeConfig.textMultiplier,
   );
 
   static final TextStyle _headlineDark = headlineLight.copyWith(color: Colors.black);
 
-  static final TextStyle _bodyDark = bodyLight.copyWith(color: Colors.white);
+  static final TextStyle bodyDark = bodyLight.copyWith(color: Colors.white);
 
   static final TextStyle _titleDark = titleLight.copyWith(color: Colors.white);
 
-  static final TextStyle _subTitleDark = _subtitleLight.copyWith(color: Colors.white70);
+  static final TextStyle subTitleDark = subtitleLight.copyWith(color: Colors.white70);
 
-  static final TextStyle _buttonDark = _buttonLight.copyWith(color: Colors.black);
+  static final TextStyle _buttonDark = buttonLight.copyWith(color: Colors.black);
 }
